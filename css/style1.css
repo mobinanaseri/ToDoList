@@ -2,7 +2,7 @@
 
 :root{
     --accent-color: 46,32,190,0.40;
-    --moon-image: url('/images/half-moon-moon-png-icon-62110.png');
+    --moon-image: url('../images/half-moon-moon-png-icon-62110.png');
     --todo-title: #ffffff;
     --add-btn-bg: #ffffff;
     --add-btn-border:#ffffff;
@@ -30,7 +30,7 @@
 }
 .dark{
     --accent-color: 24, 19, 76,78%;
-    --moon-image: url('/images/PngItem_2645717.png');
+    --moon-image: url('../images/PngItem_2645717.png');
     --todo-title: white;
     --add-btn-bg: #2e2e2e;
     --add-btn-border:#1e1e1e;
