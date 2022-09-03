@@ -1,0 +1,183 @@
+@import url("../css/bootstrap-icons.css");
+
+:root{
+    --accent-color: 46,32,190,0.40;
+    --moon-image: url('/images/half-moon-moon-png-icon-62110.png');
+    --todo-title: #ffffff;
+    --add-btn-bg: #ffffff;
+    --add-btn-border:#ffffff;
+    --input-group-bg:#ffff;
+    --input-group-bg-focus:#ffffff;
+    --input-group-border-focus:#ffffff;
+    --input-group-border:#ffffff;
+    --list-group-bg:#ffffff;
+    --list-group-border:#ffffff;
+    --list-group-items:#f3f4f6;
+    --remove-icon:black;
+    --last-list-group-item-bg:#ffffff;
+    --last-list-group-item-border:#ffffff;
+    --last-list-group-items-text:#6c757d;
+    --footer-bold-text:#7b78bb;
+    --scrolbar-color:#7b78bb;
+    --scrolbar-color-hover:#5b58ab;
+    --placeholder:#37393c;
+    --input-item-text-color:#37393c;
+    --footer:#6c757d;
+    --body-bg: #f3f4f6;
+
+
+
+}
+.dark{
+    --accent-color: 24, 19, 76,78%;
+    --moon-image: url('/images/PngItem_2645717.png');
+    --todo-title: white;
+    --add-btn-bg: #2e2e2e;
+    --add-btn-border:#1e1e1e;
+    --input-group-bg:#1e1e1e;
+    --input-group-bg-focus:#1e1e1e;
+    --input-group-border:#1e1e1e;
+    --input-group-border-focus:#1e1e1e;
+    --list-group-bg:#1e1e1e;
+    --list-group-border:#1e1e1e;
+    --list-group-items:#2e2e2e;
+    --remove-icon:white;
+    --last-list-group-item-bg:#1e1e1e;
+    --last-list-group-item-border:#1e1e1e;
+    --last-list-group-items-text:white;
+    --footer-bold-text:#bb86fc;
+    --scrolbar-color:#bb86fc;
+    --scrolbar-color-hover:#892CDC;
+    --placeholder:white;
+    --input-item-text-color:white;
+    --body-bg:#121212;
+    --footer:white;
+
+
+
+}
+
+body{
+    background-color: var(--body-bg) ;
+}
+
+.header-bg {
+    background-image:
+    /*linear-gradient(to bottom , rgba(33, 11, 42, 0.7), rgba(var(--accent-color), 0.6), rgba(13,110,253,0.6)),*/
+    linear-gradient(to bottom ,rgba(var(--accent-color)) ,rgba(33, 11, 42, 0.7),rgba(33, 11, 42, 0.7)) ,
+    url('../images/bg-1.jpg') ;
+    url('../images/bg-1.jpg') ;
+    height: 260px;
+    background-size: cover;
+    /*color: white;*/
+    padding: 20px;
+}
+a:link {
+    text-decoration: none;
+    color: #6c757d;
+}
+
+a:visited {
+    text-decoration: none;
+    color: #6c757d;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #6c757d;
+}
+
+#add-btn {
+    background-color: var(--add-btn-bg);
+    border: var(--add-btn-border);
+
+}
+
+.bi,.check-box,#dark-mode {
+    cursor: pointer;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 15px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--scrolbar-color);
+    border-radius: 10px;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background:var(--scrolbar-color-hover);
+}
+.list-group{
+    height: 300px;
+    overflow: auto;
+    overflow-x: hidden;
+}
+.todo-title{
+    color: var(--todo-title);
+}
+.input-group input{
+    background-color: var(--input-group-bg);
+    border-color: var(--input-group-border);
+}
+.input-group input:focus{
+    background-color: var(--input-group-bg-focus);
+    box-shadow: none;
+    border-color: var(--input-group-border-focus);
+}
+.form-control button {
+    background-color: #37393c;
+}
+.form-control:hover{
+    color: var(--input-item-text-color);
+}
+.form-control{
+    color:var(--input-item-text-color);;
+}
+.list-group{
+    background-color: var(--list-group-bg) !important;
+    border-color: var(--list-group-border) !important;
+}
+.list-group-item{
+    background-color: var(--list-group-items) !important;
+    color: var(--input-item-text-color);
+}
+.remove-item{
+    color: var(--remove-icon);
+    position: absolute;
+    right: 20px;
+}
+.last-list-group-item{
+    border-color:var(--last-list-group-item-border) !important;
+    background-color: var(--last-list-group-item-bg) !important;
+    color: #7c7c92;
+}
+
+#all,#active,#completed,#clear-completed,#left-elements{
+    color: var(--last-list-group-items-text)
+}
+#clear-completed{
+    color: white;!important;
+}
+.footer-text-bold{
+    color: var(--footer-bold-text)
+}
+
+.dark-mode{
+    content: var(--moon-image);
+    width: 50px;
+}
+.footer{
+    color: var(--footer);
+}
+
+
+
+
+
