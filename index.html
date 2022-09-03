@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>let's create TODO!</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style1.css" rel="stylesheet">
+
+
+
+</head>
+
+
+
+<body>
+<div class="header-bg position-relative">
+    <section class="container " style="max-width: 650px">
+        <div>
+            <div class="d-flex justify-content-between align-items-center py-2 position-relative">
+                <div class="todo-title d-inline text-uppercase"><h1 style="font-weight: bold">t o d o</h1></div>
+                <div id="dark-mode" class="dark-mode d-inline"></div>
+            </div>
+            <div class="input-group input-group-lg mt-4  ">
+                <input id="input-todo" type="text" class="form-control fw-semibold p-3" aria-label="Large"
+                       aria-describedby="inputGroup-sizing-sm"
+                       placeholder="create new todo..." style="font-size: 18px">
+                <button id="add-btn" class="add-btn btn btn-secondary text-muted " type="submit">
+                    <i class="bi bi-plus-lg"></i>
+                </button>
+            </div>
+            <div class="mt-4">
+                <div class=" checkbox-list-group" style="position: relative">
+                    <div class="d-flex list-group flex-column bg-white mb-2 rounded-3 border shadow-sm" style="height: 400px;">
+                        <div class="list-group-item py-3 d-flex align-items-center fw-semibold d-none shadow-sm">&nbsp;
+                            <input  class="check-box" type="checkbox">
+                            <p id="item_" style="font-size: 17px"  class="todo-item m-0 mx-2 ">complete online javascript course</p>
+                            <i id="#remove-item" class="remove-item bi bi-x-lg" style="position: absolute; right: 20px"></i>
+                        </div>
+                    </div>
+                    <div
+                         class=" px-2 border b-1 last-list-group-item py-3 d-flex justify-content-between ">
+                        <div class="left-elements" id="left-elements"><span>0</span> items left</div>
+                        <div class=" justify-content-center">
+                            <button class="all fw-bold" id="all" >All</button>
+                            <button class="active fw-bold" id="active" >Active</button>
+                            <button class="completed fw-bold" id="completed">Completed</button>
+                        </div>
+                        <button class="clear-completed" id="clear-completed">Clear Completed</button>
+                    </div>
+                </div>
+            </div>
+            <footer class="footer fw-semibold mt-4 ">
+                <p class="text-center">Challenge by<span class="footer-text-bold"> Frontend Mentor</span> . Coded by
+                    <span class="footer-text-bold">Mobina</span>
+                </p>
+            </footer>
+        </div>
+    </section>
+</div>
+
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/jquery.min.js"></script>
+
+<script>
+    $("#add-btn").click(function () {
+        let new_input = $("#input-todo").val()
+        let new_element = $(".list-group-item").first().clone()
+        new_element.addClass('unchecked')
+        new_element.find('p').text(new_input)
+        new_element.removeClass('d-none')
+        new_element.find('input').change(function (){
+            if (this.checked){
+                $(this).parent().find('p').css("text-decoration","line-through")
+                $(this).parent().find('p').addClass("text-muted")
+                $(this).parent().removeClass("unchecked")
+                $(this).parent().addClass("checked")
+            }else {
+                $(this).parent().find('p').css("text-decoration","solid")
+                $(this).parent().find('p').removeClass("text-muted")
+                $(this).parent().removeClass("checked")
+                $(this).parent().addClass("unchecked")
+            }
+            let count_unchecked = $(".unchecked").length
+            $(".left-elements span").text(count_unchecked)
+        })
+        new_element.find('i').click(function (){
+            $(this).parent().remove()
+            let count_unchecked = $(".unchecked").length
+            $(".left-elements span").text(count_unchecked)
+        })
+        $(".list-group").append(new_element)
+        $(".form-control").val('')
+        let count_unchecked = $(".unchecked").length
+        $(".left-elements span").text(count_unchecked)
+
+        $(".clear-completed").click(function (){
+            $(".checked").remove()
+        })
+        $(".active").click(function (){
+            $(".checked").addClass("d-none")
+            $(".unchecked").removeClass("d-none")
+        });
+        $(".completed").click(function (){
+            $(".unchecked").addClass("d-none")
+            $(".checked").removeClass("d-none")
+        })
+        $(".all").click(function (){
+            $(".checked").removeClass("d-none")
+            $(".unchecked").removeClass("d-none")
+        })
+    })
+
+
+    const html = document.querySelector('html')
+    const moon = document.querySelector("#dark-mode")
+    moon.addEventListener("click",function (){
+        html.classList.toggle('dark')
+    })
+
+
+    $(".all").click(function (){
+        $(".all").css("color","#bb86fc")
+        $(".active").css("color","#9ca3af")
+        $(".completed").css("color","#9ca3af")
+    })
+    $(".active").click(function (){
+        $(".active").css("color","#bb86fc")
+        $(".all").css("color","#9ca3af")
+        $(".completed").css("color","#9ca3af")
+    })
+    $(".completed").click(function (){
+        $(".completed").css("color","#bb86fc")
+        $(".active").css("color","#9ca3af")
+        $(".all").css("color","#9ca3af")
+    })
+
+</script>
+
+
+</body>
+</html>
