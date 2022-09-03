@@ -79,17 +79,14 @@ body{
 }
 a:link {
     text-decoration: none;
-    color: #6c757d;
 }
 
 a:visited {
     text-decoration: none;
-    color: #6c757d;
 }
 
 a:hover {
     text-decoration: underline;
-    color: #6c757d;
 }
 
 #add-btn {
@@ -169,7 +166,7 @@ a:hover {
     background-color: var(--last-list-group-item-bg);
     border: var(--last-list-group-item-border);
 }
-.footer-text-bold{
+.footer-text-bold,a,a:hover{
     color: var(--footer-bold-text)
 }
 
