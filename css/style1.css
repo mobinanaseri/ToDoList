@@ -2,9 +2,9 @@
 
 :root{
     --accent-color: 46,32,190,0.40;
-    --moon-image: url('../images/half-moon-moon-png-icon-62110.png');
+    --moon-image: url('../images/clipart497212.png');
     --todo-title: #ffffff;
-    --add-btn-bg: #ffffff;
+    --add-btn-bg: #f3f4f6;
     --add-btn-border:#ffffff;
     --input-group-bg:#ffff;
     --input-group-bg-focus:#ffffff;
@@ -16,21 +16,24 @@
     --remove-icon:black;
     --last-list-group-item-bg:#ffffff;
     --last-list-group-item-border:#ffffff;
-    --last-list-group-items-text:#6c757d;
+    --last-list-group-items-text:#9ca3af;
+    --last-list-group-items-text-bg:#ffffff;
+    --last-list-group-items-text-border:#ffffff;
     --footer-bold-text:#7b78bb;
     --scrolbar-color:#7b78bb;
     --scrolbar-color-hover:#5b58ab;
     --placeholder:#37393c;
     --input-item-text-color:#37393c;
-    --footer:#6c757d;
+    --footer:#9ca3af;
     --body-bg: #f3f4f6;
+    --btn-clicked-color:#7b78bb ;
 
 
 
 }
 .dark{
     --accent-color: 24, 19, 76,78%;
-    --moon-image: url('../images/PngItem_2645717.png');
+    --moon-image: url('../images/sun-4-64.png');
     --todo-title: white;
     --add-btn-bg: #2e2e2e;
     --add-btn-border:#1e1e1e;
@@ -44,14 +47,19 @@
     --remove-icon:white;
     --last-list-group-item-bg:#1e1e1e;
     --last-list-group-item-border:#1e1e1e;
-    --last-list-group-items-text:white;
+    --last-list-group-items-text:#9ca3af;
+    --last-list-group-items-text-bg:#1e1e1e;
+    --last-list-group-items-text-border:#1e1e1e;
     --footer-bold-text:#bb86fc;
     --scrolbar-color:#bb86fc;
     --scrolbar-color-hover:#892CDC;
     --placeholder:white;
     --input-item-text-color:white;
     --body-bg:#121212;
-    --footer:white;
+    --footer:#9ca3af;
+    --btn-clicked-color:#bb86fc;
+
+
 
 
 
@@ -63,13 +71,10 @@ body{
 
 .header-bg {
     background-image:
-    /*linear-gradient(to bottom , rgba(33, 11, 42, 0.7), rgba(var(--accent-color), 0.6), rgba(13,110,253,0.6)),*/
     linear-gradient(to bottom ,rgba(var(--accent-color)) ,rgba(33, 11, 42, 0.7),rgba(33, 11, 42, 0.7)) ,
-    url('../images/bg-1.jpg') ;
-    url('../images/bg-1.jpg') ;
+    url('../images/bg-1.jpg');
     height: 260px;
     background-size: cover;
-    /*color: white;*/
     padding: 20px;
 }
 a:link {
@@ -160,10 +165,9 @@ a:hover {
 }
 
 #all,#active,#completed,#clear-completed,#left-elements{
-    color: var(--last-list-group-items-text)
-}
-#clear-completed{
-    color: white;!important;
+    color: var(--last-list-group-items-text);
+    background-color: var(--last-list-group-item-bg);
+    border: var(--last-list-group-item-border);
 }
 .footer-text-bold{
     color: var(--footer-bold-text)
@@ -176,6 +180,9 @@ a:hover {
 .footer{
     color: var(--footer);
 }
+
+
+
 
 
 
