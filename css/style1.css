@@ -14,6 +14,7 @@
     --list-group-border:#ffffff;
     --list-group-items:#f3f4f6;
     --remove-icon:black;
+    --remove-icon-hover:#bb86fc;
     --last-list-group-item-bg:#ffffff;
     --last-list-group-item-border:#ffffff;
     --last-list-group-items-text:#9ca3af;
@@ -45,6 +46,7 @@
     --list-group-border:#1e1e1e;
     --list-group-items:#2e2e2e;
     --remove-icon:white;
+    --remove-icon-hover:#bb86fc;
     --last-list-group-item-bg:#1e1e1e;
     --last-list-group-item-border:#1e1e1e;
     --last-list-group-items-text:#9ca3af;
@@ -155,6 +157,9 @@ a:hover {
     position: absolute;
     right: 20px;
 }
+.remove-item:hover{
+    color: var(--remove-icon-hover);
+}
 .last-list-group-item{
     border-color:var(--last-list-group-item-border) !important;
     background-color: var(--last-list-group-item-bg) !important;
@@ -177,6 +182,7 @@ a:hover {
 .footer{
     color: var(--footer);
 }
+
 
 
 

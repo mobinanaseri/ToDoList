@@ -35,13 +35,12 @@
                         <div class="list-group-item py-3 d-flex align-items-center fw-semibold d-none shadow-sm">&nbsp;
                             <input  class="check-box" type="checkbox">
                             <p id="item_" style="font-size: 17px"  class="todo-item m-0 mx-2 ">complete online javascript course</p>
-                            <i id="#remove-item" class="remove-item bi bi-x-lg" style="position: absolute; right: 20px"></i>
+                            <i id="#remove-item" class="remove-item bi bi-x-lg " style="position: absolute; right: 20px"></i>
                         </div>
                     </div>
-                    <div
-                         class=" px-2 border b-1 last-list-group-item py-3 d-flex justify-content-between ">
+                    <div class=" px-2 border b-1 last-list-group-item py-3 d-flex justify-content-between ">
                         <div class="left-elements" id="left-elements"><span>0</span> items left</div>
-                        <div class=" justify-content-center">
+                        <div class="">
                             <button class="all fw-bold" id="all" >All</button>
                             <button class="active fw-bold" id="active" >Active</button>
                             <button class="completed fw-bold" id="completed">Completed</button>
@@ -63,7 +62,8 @@
 <script src="js/jquery.min.js"></script>
 
 <script>
-    $("#add-btn").click(function () {
+<!-- add new item  -->
+    var callback = function(){
         let new_input = $("#input-todo").val()
         let new_element = $(".list-group-item").first().clone()
         new_element.addClass('unchecked')
@@ -109,15 +109,18 @@
             $(".checked").removeClass("d-none")
             $(".unchecked").removeClass("d-none")
         })
-    })
-
+    };
+    $(".form-control").keypress(function (event){
+        var keycode = (event.keyCode ? event.keyCode : event.which);
+        if (keycode==13)callback();
+    });
+    $("#add-btn").click(callback);
 
     const html = document.querySelector('html')
     const moon = document.querySelector("#dark-mode")
     moon.addEventListener("click",function (){
         html.classList.toggle('dark')
     })
-
 
     $(".all").click(function (){
         $(".all").css("color","#bb86fc")
@@ -134,6 +137,8 @@
         $(".active").css("color","#9ca3af")
         $(".all").css("color","#9ca3af")
     })
+
+
 
 </script>
 
